@@ -15,13 +15,55 @@
   </head>
   <body>
     <div class="container">
+      <form id="search" class="mb-3">
+        <div class="row">
+          <div class="col-5">
+            <input
+              type="search"
+              placeholder="Enter a city name"
+              id="city-name"
+              class="form-control"
+              autocomplete="off"
+              autofocus="on"
+            />
+          </div>
+          <div class="col-3">
+            <input type="submit" value="search" class="btn btn-primary w-90" />
+          </div>
+          <div class="col-3">
+            <input
+              type="submit"
+              value="search current location"
+              class="btn btn-primary w-90"
+            />
+          </div>
+        </div>
+      </form>
       <div class="row">
         <div class="col-4">
-          <h1>Bern</h1>
-          <h2>Sunday 22:05</h2>
+          <h1 id="city">Bern</h1>
+          <h2 id="date">Sunday 22:05</h2>
         </div>
-        <div class="col-4">🌞</div>
-        <div class="col-4">hello</div>
+        <div class="col-4">
+          <img src="" alt="Clear" id="icon" class="float-left" />
+        </div>
+        <div class="col-4">
+          <ul>
+            <li>
+              <strong id="temperature"> 5 </strong>
+              <span class="temperature-units">
+                <a href="#" id="celsius">°C</a> |
+                <a href="#" id="fahrenheit">°F</a>
+              </span>
+            </li>
+            <li>
+              Felt temperature: <span id="felt-temperature"></span> 4°C | 8°F
+            </li>
+            <li>Wind: <span id="wind-speed"> 22</span>km/h</li>
+
+            <li>Humidity: <span id="humidity">62</span>%</li>
+          </ul>
+        </div>
         <small>
           <a
             href="https://github.com/stephanielichtsteiner/vanilla-weather-app"

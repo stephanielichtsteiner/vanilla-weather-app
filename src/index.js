@@ -33,9 +33,22 @@ iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.dat
 iconElement.setAttribute("alt",response.data.weather[0].description);
 }
 
-
+function search (city){
 let apikey = "c3e2e398dc000b29ea3b92e856aeecfa";
-let city = "kiev";
 let apiurl =`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`;
 
 axios.get(apiurl).then(displayTemperature);
+}
+
+function handleSubmit(event){
+    event.preventDefault();
+    let cityNameElement = document.querySelector("#city-name");
+search(cityNameElement.value);
+}
+
+search("Berlin");
+
+
+
+let form = document.querySelector("#search");
+form.addEventListener("submit", handleSubmit);

@@ -15,6 +15,8 @@
       href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap"
       rel="stylesheet"
     />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
     <link rel="stylesheet" href="src/style.css" />
 
     <title>Weather App</title>
@@ -49,7 +51,8 @@
           </form>
           <div class="row">
             <div class="col-4">
-              <h1 id="city">Bern</h1>
+              <h1 id="city"></h1>
+              <h2 id="description"></h2>
               <h2 id="date">Sunday 22:05</h2>
             </div>
             <div class="col-4">
@@ -60,19 +63,18 @@
             <div class="col-4">
               <ul>
                 <li>
-                  <strong id="temperature"> 5 </strong>
+                  <strong id="temperature"> </strong>
                   <span class="temperature-units">
                     <a href="#" id="celsius">°C</a> |
                     <a href="#" id="fahrenheit">°F</a>
                   </span>
                 </li>
                 <li>
-                  Felt temperature: <span id="felt-temperature"></span> 4°C |
-                  8°F
+                  Felt temperature: <span id="felt-temperature"></span> °C
                 </li>
-                <li>Wind: <span id="wind-speed"> 22</span>km/h</li>
+                <li>Wind: <span id="wind-speed"></span> km/h</li>
 
-                <li>Humidity: <span id="humidity">62</span>%</li>
+                <li>Humidity: <span id="humidity"></span>%</li>
               </ul>
             </div>
            <div class="row">
@@ -151,13 +153,14 @@
            </div>
             </div>
           </div>
-        </div>
-        <small>
+          <small>
           <a
             href="https://github.com/stephanielichtsteiner/vanilla-weather-app"
             target="_blank"
             >Open-source code</a
           >, by Stéphanie Lichtsteiner</small>
+        </div>
+        
       </div>
           </div>
       

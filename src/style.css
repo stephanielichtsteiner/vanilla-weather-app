@@ -6,6 +6,7 @@ h1 {
 h2 {
   font-size: 18px;
   text-align: left;
+  text-transform: capitalize;
 }
 
 ul {
@@ -21,12 +22,6 @@ li {
 .weather-app-wrapper {
   max-width: 800px;
   margin: 50px auto;
-  background: linear-gradient(
-    89deg,
-    rgb(21, 74, 189) 0.1%,
-    rgb(26, 138, 211) 51.5%,
-    rgb(72, 177, 234) 100.2%
-  );
 }
 
 .weather-app {
@@ -34,4 +29,10 @@ li {
   border: 0.5px solid black;
   border-radius: 10px;
   font-family: "Quicksand", sans-serif;
+  background: linear-gradient(
+    89deg,
+    rgb(21, 74, 189) 0.1%,
+    rgb(26, 138, 211) 51.5%,
+    rgb(72, 177, 234) 100.2%
+  );
 }

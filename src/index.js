@@ -54,7 +54,9 @@ forecastElement.innerHTML += `
       <div class="card saturday " style="">
         <h3>${formatHours(forecast.dt * 1000)}</h3>
         <div class="card-body">
-        <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png"/>
+        <div class="row text-center">
+        <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png" />
+        </div>
             <p class="card-text"> ${Math.round(forecast.main.temp_max)}°C | ${Math.round(forecast.main.temp_min)}°C</p>
         </div>
     </div>
@@ -62,7 +64,6 @@ forecastElement.innerHTML += `
     `;
 }
 }
-
 
 function search(city){
 let apikey = "c3e2e398dc000b29ea3b92e856aeecfa";
@@ -79,7 +80,6 @@ function handleSubmit(event){
     let cityNameElement = document.querySelector("#city-name");
 search(cityNameElement.value);
 }
-
 
 function displayFahrenheitTemperature(event){
     event.preventDefault();
@@ -100,10 +100,8 @@ function displayCelsiusTemperature(event){
 
 let celsiusTemperature = null;
 
-
 let form = document.querySelector("#search");
 form.addEventListener("submit", handleSubmit);
-
 
 let fahrenheitLink = document.querySelector("#fahrenheit");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);

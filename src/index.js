@@ -1,16 +1,9 @@
 function formatDate(timestamp){
 let date = new Date(timestamp);
-let hours = date.getHours();
-if (hours < 10){
-    hours = `0${hours}`;
-}
-let minutes = date.getMinutes();
-if (minutes < 10){
-    minutes = `0${minutes}`;
-}
+
 let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 let day = days[date.getDay()];
-return `${day} ${hours}:${minutes}`;
+return `${day} ${formatHours(timestamp)}`;
 }
 
 function formatHours(timestamp){
@@ -51,12 +44,15 @@ iconElement.setAttribute("alt", response.data.weather[0].description);
 
 function displayForecast(response){
     let forecastElement = document.querySelector("#forecast");
-    let forecast = response.data.list[0];
+    let forecast = null;
+    forecastElement.innerHTML = '';
 
-    forecastElement.innerHTML = `
+for (let index = 0; index < 6; index++){
+    forecast = response.data.list[index];
+forecastElement.innerHTML += `
     <div class="col-2">
-    <div class="card saturday " style="">
-    <h3>${formatHours(forecast.dt * 1000)}</h3>
+      <div class="card saturday " style="">
+        <h3>${formatHours(forecast.dt * 1000)}</h3>
         <div class="card-body">
         <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png"/>
             <p class="card-text"> ${Math.round(forecast.main.temp_max)}°C | ${Math.round(forecast.main.temp_min)}°C</p>
@@ -64,8 +60,9 @@ function displayForecast(response){
     </div>
 </div>
     `;
-
 }
+}
+
 
 function search(city){
 let apikey = "c3e2e398dc000b29ea3b92e856aeecfa";

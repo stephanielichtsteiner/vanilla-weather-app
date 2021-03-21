@@ -53,22 +53,23 @@ li {
   );
 }
 
-.temperature-units :active{
-color: black;
-cursor: default;
-}
-
-.temperature-units:hover{
-  text-decoration: none;
-
-}
-
 #search-button {
   margin-left: 0px;
 }
 
-#temp {
-  font-size: 20px;
+#celsius {
+  text-decoration: none;
 }
 
+#fahrenheit {
+  text-decoration: none;
+}
 
+.weather-temperature .active {
+  color: black;
+  cursor: default;
+}
+
+.weather-temperature .active:hover {
+  text-decoration: none;
+}

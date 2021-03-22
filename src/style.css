@@ -52,9 +52,17 @@ li {
   max-width: 800px;
 }
 
+.card {
+  min-height: 200px;
+}
+
+.card-text {
+  padding-top: 8px;
+}
+
 .weather-app {
   padding: 20px;
-  border: 0.5px solid black;
+  border: 0.2px solid black;
   border-radius: 10px;
   font-family: "Quicksand", sans-serif;
   background: linear-gradient(
@@ -62,6 +70,12 @@ li {
     rgb(39, 115, 255) 4.3%,
     rgb(62, 211, 232) 101.4%
   );
+}
+
+.temperature-units {
+  position: relative;
+  font-size: 16px;
+  top: -11px;
 }
 
 #search-button {
@@ -74,6 +88,10 @@ li {
 
 #fahrenheit {
   text-decoration: none;
+}
+
+#temperature {
+  font-size: 32px;
 }
 
 .weather-temperature .active {
